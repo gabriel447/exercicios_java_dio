@@ -13,14 +13,9 @@ Saída
 
 A saída deve ser o valor que o sobrinho terá ao final dos meses. (sem as aspas)
 
-Exemplos
+Exemplo
 
-Entrada: 2
-Saída: "Voce tera 100 reais"
-
-Entrada: 4
-Saída: "Voce tera 100 reais"
-
-Entrada: 10
-Saída: "Voce tera 500 reais"
-
+Entrada		          Saída
+   2	      "Voce tera 100 reais" 
+   4	      "Voce tera 200 reais"
+  10	      "Voce tera 500 reais"
