@@ -1,0 +1,17 @@
+import java.util.Scanner; 
+    
+public class Program {
+    public static void main(String[] args) {
+        Scanner leitor = new Scanner(System.in);
+        String arquivoDoPc = leitor.next();
+        
+        String resultado = arquivoDoPc.substring(arquivoDoPc.lastIndexOf(".") + 1);
+        
+        if(resultado.intern() == "mp3"){
+            System.out.println("Salvar");
+        } else {
+            System.out.println("Deletar");
+        }
+
+    }
+}

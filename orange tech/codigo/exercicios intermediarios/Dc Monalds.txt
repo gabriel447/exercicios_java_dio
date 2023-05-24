@@ -1,0 +1,15 @@
+
+import java.util.Scanner; 
+    
+public class Program {
+    public static void main(String[] args) {
+        Scanner leitor = new Scanner(System.in);
+        String ingredientes = leitor.next();
+        
+        String[] itensLanche = ingredientes.split(";");
+        
+        for(String item : itensLanche) {
+            System.out.println(item);
+        }
+    }
+}
