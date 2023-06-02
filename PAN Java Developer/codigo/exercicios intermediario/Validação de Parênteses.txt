@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class ValidParentheses {
+
+    public static void main(String[] args) {
+        Scanner scanner= new Scanner(System.in);
+
+        Boolean caracter = ehValido(scanner.nextLine());
+
+        System.out.println(caracter);
+    }
+
+    public static boolean ehValido(String s) {
+        String valor1 = "()";
+        String valor2 = "[]";
+        String valor3 = "{}";
+        String vazio = " ";
+        if(s.equals(valor1)){
+          return true;
+        }else if(s.equals(valor2)){
+          return true;
+        }else if(s.equals(valor3)){
+          return true;
+        }else if(s.equals(vazio)){
+          return true;
+        }else {
+          return false;
+        }
+        
+    }
+
+}

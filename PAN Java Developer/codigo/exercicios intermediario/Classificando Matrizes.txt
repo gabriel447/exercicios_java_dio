@@ -1,0 +1,50 @@
+// IMPORTANTE: Para ler os dados de entrada do usuário, utilize a classe Scanner, 
+// instanciando seu leitor da seguinte forma: "Scanner leitor = new Scanner(System.in);". 
+// Por outro lado, para imprimir suas saídas, utilize System.out.print ou System.out.println.  
+
+// Abaixo segue um exemplo de código que você pode ou não utilizar:
+
+import java.util.*;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String args[]) {
+          //O código começa lendo a entrada do usuário com a classe Scanner
+     Scanner input = new Scanner(System.in);
+      int i;
+      //e armazenando o número de elementos N em uma variável
+      int N = input.nextInt();
+      //Em seguida, ele cria um array de inteiros chamado "nums" com N elementos.
+    	int [] nums = new int[N];
+    	//Em seguida, ele inicia um loop "for" 
+    	  for (i = 0; i < N; i++)
+    	  {
+    	    /*que percorre cada elemento do array nums, e para cada elemento, 
+    	    lê a entrada do usuário novamente com o Scanner e armazena o valor na posição "i" do array.*/
+    		  nums[i] = input.nextInt();
+    	  }
+       	//TODO: mova todos os inteiros pares para o inicio do array, seguido por todos os números ímpares 
+     int j = 0;
+     //o código entra em outro loop "for" que percorre cada elemento do array nums novamente, 
+    for (i = 0; i < nums.length; i++) {
+      //e verifica se o elemento atual é par ou ímpar.
+      if (nums[i]%2 == 0) {
+        /*Se o elemento for par, o código o move para o início do array trocando-o com o elemento na posição "j" 
+        usando uma operação bitwise XOR.*/
+        nums[i] = nums[i] ^ nums[j] ^ (nums[j] = nums[i]);
+        //O índice "j" é atualizado toda vez que um elemento par é encontrado.
+        j++;
+      }
+    }
+    
+    /*
+    O resultado final é um array com todos os elementos pares no início do array, 
+    seguido por todos os números ímpares, conforme especificado no TODO. 
+    O código não imprime o array ordenado na saída, então o último loop "for" é inútil neste contexto.
+    */
+
+    for (var entry : nums) {
+      System.out.println(entry + " ");
+    }
+  }
+}

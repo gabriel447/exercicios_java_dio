@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class Desafio {
+  
+    public static void main(String[] args) {
+    //o programa solicita ao usuário a entrada de um número inteiro positivo n por meio do objeto Scanner.
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        /*Em seguida, chama a função 
+        menorNumeroQuadradosPerfeitos(n) para calcular a resposta e imprime o resultado na saída 
+        padrão com System.out.println(res).*/
+        int res = menorNumeroQuadradosPerfeitos(n);
+        System.out.println(res);
+        //Por fim, o programa fecha o objeto Scanner para evitar vazamento de recursos.
+        sc.close();
+    }
+    
+    public static int menorNumeroQuadradosPerfeitos(int n) {
+      //A variável dp é um array de tamanho n+1, que armazena os resultados intermediários da solução.
+        int[] dp = new int[n+1];
+        /*A linha Arrays.fill(dp, Integer.MAX_VALUE); 
+        inicializa todo o array com o valor máximo possível de um inteiro.*/
+        Arrays.fill(dp, Integer.MAX_VALUE);
+        dp[0] = 0;
+        /*O loop for é usado para calcular a solução do subproblema de dp[i], 
+        que é o menor número de quadrados perfeitos que somados resultam em i*/
+        for (int i = 1; i <= n; i++) {
+          /*A variável j itera sobre os possíveis quadrados perfeitos (jj) 
+          que podem ser somados para formar o número i.*/
+            for (int j = 1; j*j <= i; j++) {
+              /*A fórmula usada para calcular a solução é: dp[i] = Math.min(dp[i], dp[i-j*j] + 1);. 
+              Isso significa que a solução para dp[i] é o mínimo entre seu valor atual e a solução para dp[i-j*j] 
+              acrescido de 1, pois estamos adicionando um quadrado perfeito (jj) a uma solução menor (dp[i-j*j]).*/
+                dp[i] = Math.min(dp[i], dp[i-j*j] + 1);
+            }
+        }
+        //Finalmente, a função retorna dp[n], que é a solução do problema original.
+        return dp[n];
+    }
+}
