@@ -1,0 +1,26 @@
+import java.util.*;
+
+public class DIO {
+    public static void main(String[] args) {
+    
+    Scanner input = new Scanner(System.in);
+    double morangos = input.nextInt();
+    double macas = input.nextInt();
+    
+    double kg_morangos = morangos * 2.5;
+    double kg_macas = macas * 1.8;
+    double valor_total = kg_morangos + kg_macas;
+    double desconto;
+
+    if(morangos + macas > 8 || valor_total > 25){
+        desconto = valor_total * 0.1;
+    }else {
+        desconto = 0;
+    }
+    
+    double valor_final = valor_total - desconto;
+    
+    System.out.println(valor_final);
+
+    }
+}

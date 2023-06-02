@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Ler a string de entrada
+        String entrada = scanner.nextLine();
+
+        // Inicializar as variáveis de contagem
+        int espacosEmBranco = 0;
+        int vogais = 0;
+
+        // Percorrer a string de entrada e contar os espaços em branco e vogais
+        for (int i = 0; i < entrada.length(); i++) {
+            char caractere = entrada.charAt(i);
+            if (caractere == ' ') {
+                espacosEmBranco++;
+            } else if (caractere == 'a' || caractere == 'e' || caractere == 'i' || caractere == 'o' || caractere == 'u' ||
+                       caractere == 'A' || caractere == 'E' || caractere == 'I' || caractere == 'O' || caractere == 'U') {
+                vogais++;
+            }
+        }
+
+        // Mostrar os resultados da contagem
+        System.out.printf("Espacos em branco: " + espacosEmBranco + " Vogais: " + vogais);
+
+        scanner.close();
+    }
+}

@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] Args) {
+
+     Scanner sc = new Scanner(System.in);
+     
+     double h = 0d;
+     
+     int n = sc.nextInt();
+
+     for (int i = n; i >= 1; i--) {
+        h += 1d/i;
+      }
+     System.out.printf("%.0f", h);
+       
+   }
+}

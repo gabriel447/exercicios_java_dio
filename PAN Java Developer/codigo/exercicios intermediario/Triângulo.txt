@@ -1,0 +1,31 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class DIO{
+	
+	public static void main(String[] args) throws IOException {
+		Scanner leitor = new Scanner(System.in);
+		double a = leitor.nextDouble();
+		double b = leitor.nextDouble();
+		double c = leitor.nextDouble();
+		double maior;
+		double soma;
+		boolean triangulo;
+		
+		// Verificar se os valores formam um triângulo
+        if (a + b > c && a + c > b && b + c > a) {
+            // Calcular o perímetro do triângulo
+            double perimetro = a + b + c;
+            // Mostrar a mensagem do perímetro
+            System.out.printf("Perimetro = %.1f\n", perimetro);
+        } else {
+            // Calcular a área do trapézio
+            double area = ((a + b) * c) / 2;
+            // Mostrar a mensagem da área
+            System.out.printf("Area = %.1f\n", area);
+        }
+		
+		
+	}
+	
+}
